@@ -1,0 +1,29 @@
+.button-bar {
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.button.back {
+    background-image: linear-gradient(rgb(214, 69, 69), rgb(90, 7, 7));
+}
+
+.button.send {
+    background-image: linear-gradient(rgb(176, 221, 176), rgb(105, 190, 102));
+    color:rgb(31, 139, 139)
+    
+}

@@ -1,0 +1,54 @@
+.switch {
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.switch-header {
+    margin-left: 10px;
+    font-size: 50px;
+}
+
+.switch-header > .on {
+      color:rgb(87, 84, 84);
+}
+
+.switch-header > .off {
+    color:rgb(214, 69, 69);
+}
+
+.toggle {
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    background-image: linear-gradient(rgb(176, 221, 176), rgb(105, 190, 102));
+    /* position relative dememizin sebebi, icindeki toggle-ball position absolut oldugundan, buradaki toggle divine göre şekil almasıdır. */
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle.off-select {
+   background-image: linear-gradient(rgb(214, 69, 69), rgb(90, 7, 7));
+}
+
+
+/* Switche tikladıgımizda .off-mail classini alacak ve buradaki css kodları devreye girecektir. */
+.off-select > .toggle-ball {
+    background-color:rgb(243, 243, 246);
+    transform: translate(50px, 0);
+}
+
+
+.toggle-ball {
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    background-color:rgb(243, 243, 246);
+    /* toggle divinin icinde konumlandırmak icin position absolut verdik*/
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: all 0.3s;
+}

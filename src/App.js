@@ -1,23 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  Header,
+  MailBox,
+  SwitchBar,
+  ButtonsBar,
+  ToggleMenu,
+} from './components';
+import { useSelector } from 'react-redux';
 
-function App() {
+const App = () => {
+
+  const showToggle = useSelector(state => state.mainSlice.showToggle)
+
+  const mailTemplate = useSelector(state => state.mainSlice.mailTemplate)
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <SwitchBar />
+      {
+        //switch on olduğunda;
+        showToggle &&
+        <>
+          <ToggleMenu />
+          {
+            //toggle menude herhangi birisi seçildiginde;
+            mailTemplate !== "" &&
+            <>
+            <MailBox />
+            <ButtonsBar />
+            </>
+          }
+          
+        </>
+      }
+
     </div>
   );
 }
